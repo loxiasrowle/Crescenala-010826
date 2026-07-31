@@ -11,8 +11,10 @@
   const ctx        = canvas.getContext('2d');
 
   const closeBtn  = document.getElementById('closeBtn');
+  const bgMusic   = document.getElementById('bgMusic');
   let isOpen = false;
   let closeTimeout = null;
+  let audioStarted = false;
 
   // ---- Open card ----
   function openCard() {
@@ -20,6 +22,13 @@
     isOpen = true;
     card.classList.add('opened');
     helperText.classList.add('hidden');
+
+    // Start background music on first interaction
+    if (!audioStarted && bgMusic) {
+      bgMusic.volume = 0.5;
+      bgMusic.play().catch(() => {});
+      audioStarted = true;
+    }
     // Show close button after the opening animation finishes
     closeTimeout = setTimeout(() => {
       closeBtn.classList.add('visible');
