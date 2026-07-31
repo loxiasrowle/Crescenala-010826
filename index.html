@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Some Things Are Easier to Write Than Say</title>
+  <meta name="description" content="Happy Girlfriend Day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Floating particles canvas -->
+  <canvas id="particles"></canvas>
+
+  <!-- 3D scene -->
+  <div class="scene">
+    <div class="card" id="card">
+
+      <!-- ==================== RIGHT PAGE (letter) ==================== -->
+      <!-- Sits behind the cover; revealed when cover opens -->
+      <div class="card-right">
+        <div class="letter" id="letter">
+          <!--
+            LETTER CONTENT — Edit the text below to personalise your message.
+            Change the name, body, and signature as you wish.
+          -->
+          <p class="letter-greeting">Dear Crescenala,</p>
+
+          <p class="letter-body">
+            Some people leave footprints. You left constellations.<br><br>
+            You've changed the way I look at mornings, at sunsets, at the little moments that once felt insignificant.
+            Somehow, everything carries a little more meaning because you're in it.<br><br>
+            I don't promise a perfect story, but I promise a heart that will keep choosing you on easy days, on
+            difficult days, and on all the ordinary days in between.<br><br>
+            Happy Girlfriend Day.
+          </p>
+
+          <p class="letter-closing">With all my love,</p>
+          <p class="letter-signature">Loxias</p>
+        </div>
+      </div>
+
+      <!-- ==================== COVER (front + back) ==================== -->
+      <!-- Hinged on its LEFT edge; rotates -180° to become the left page -->
+      <div class="card-cover" id="cardCover">
+
+        <!-- Front face: visible when closed -->
+        <div class="cover-front">
+          <div class="ribbon-icon" aria-hidden="true">
+            <svg viewBox="0 0 80 90" width="56" height="63" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="ribbonGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#B8D4E8" />
+                  <stop offset="50%" stop-color="#9CC0DC" />
+                  <stop offset="100%" stop-color="#7BAACF" />
+                </linearGradient>
+                <linearGradient id="ribbonGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#C8DFF0" />
+                  <stop offset="100%" stop-color="#A0C8E0" />
+                </linearGradient>
+                <filter id="ribbonSoft" x="-10%" y="-10%" width="120%" height="120%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="0.4" />
+                </filter>
+              </defs>
+              <!-- Ribbon loops -->
+              <g filter="url(#ribbonSoft)">
+                <!-- Left loop -->
+                <path d="M40 38 Q20 30 15 18 Q12 8 22 6 Q32 4 36 16 Q38 24 40 38" fill="url(#ribbonGrad1)"
+                  opacity="0.85" />
+                <!-- Right loop -->
+                <path d="M40 38 Q60 30 65 18 Q68 8 58 6 Q48 4 44 16 Q42 24 40 38" fill="url(#ribbonGrad2)"
+                  opacity="0.85" />
+                <!-- Left tail -->
+                <path d="M40 38 Q30 52 18 72 Q16 76 20 74 Q28 68 34 58 Q38 50 40 42" fill="url(#ribbonGrad1)"
+                  opacity="0.7" />
+                <!-- Right tail -->
+                <path d="M40 38 Q50 52 62 72 Q64 76 60 74 Q52 68 46 58 Q42 50 40 42" fill="url(#ribbonGrad2)"
+                  opacity="0.7" />
+                <!-- Center knot -->
+                <ellipse cx="40" cy="38" rx="6" ry="5" fill="#8FBAD5" opacity="0.9" />
+                <ellipse cx="40" cy="37" rx="4" ry="3" fill="#C8DFF0" opacity="0.6" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="cover-title">To the girl who unknowingly became my favorite chapter</h1>
+          <p class="cover-subtitle"><em>Open when you're ready.</em></p>
+          <div class="cover-line" aria-hidden="true"></div>
+        </div>
+
+        <!-- Back face: bouquet (visible after opening, becomes left page) -->
+        <div class="cover-back">
+          <img src="bouquet.png" alt="A bouquet of flowers" class="bouquet-img" id="bouquet">
+        </div>
+
+      </div><!-- /.card-cover -->
+
+    </div><!-- /.card -->
+  </div><!-- /.scene -->
+
+  <!-- Helper prompt -->
+  <div class="helper-text" id="helperText">Click to open 💌</div>
+
+  <!-- Close button (visible when opened) -->
+  <button class="close-btn" id="closeBtn" aria-label="Close card">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round">
+      <path d="M18 6L6 18M6 6l12 12" />
+    </svg>
+    <span>Close</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
